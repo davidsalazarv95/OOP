@@ -1,0 +1,57 @@
+---
+title: "Object Oriented Programming"
+output: html_notebook
+---
+
+# Programming Paradigms
+
+Programming paradigms differ in what's the fundamental focus of your thoughts. In functional programming, you focus on the functions that will do a different set of tasks that will lead you to a goal. In OOP, your focus is on an initial piece of data, what you must store, and the methods (i.e., functions used on the object) that you´ll need to efficiently handle the object in question. 
+
+OOP is preferrable when you have a limited number of complex objects. e.g., Bioconductor. 
+
+## OOP: what you've already seen.
+
+Object oriented programming is great for building tools for data analysis, not for the data analysis itself. For example, you may have to summarize different objects, and want a different behavior for each one. You accomplish such with OOP. Think of the difference in calling summary on a data-frame and a linear model. 
+
+## OOP: Systems to use.
+
+S3 and R6 are the most common and useful OOP systems in R. S3 such that functions work differntly according to the object; R6 for more tricks. 
+
+
+```{r}
+(matrix <- matrix(c(1, 2, 3, 4)),)
+```
+
+```{r}
+class(matrix)
+```
+
+```{r}
+typeof(matrix)
+```
+
+### Overriding the class
+
+```{r}
+(random <- runif(n = 10, min = 0, max = 1))
+```
+
+```{r}
+class(random)
+```
+
+```{r}
+class(random) <- "Random_Numbers"
+class(random)
+```
+
+```{r}
+random
+```
+
+However, you won't break basic functionality. 
+
+```{r}
+mean(random)
+```
+
